@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="header">
+    <text class="title">🛠 免费在线工具箱</text>
+    <text class="subtitle">无需下载，即用即走，完全免费</text>
+  </view>
+  
+  <view class="tools-list">
+    <view 
+      wx:for="{{tools}}" 
+      wx:key="index"
+      class="tool-item"
+      bindtap="navigateToTool"
+      data-path="{{item.path}}"
+    >
+      <text class="tool-icon">{{item.icon}}</text>
+      <view class="tool-info">
+        <text class="tool-title">{{item.title}}</text>
+        <text class="tool-desc">{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+</view>
