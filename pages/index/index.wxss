@@ -1,0 +1,67 @@
+.container {
+  max-width: 600rpx;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+.title {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: bold;
+  display: block;
+}
+
+.subtitle {
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 16rpx;
+  display: block;
+}
+
+.tools-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24rpx;
+}
+
+.tool-item {
+  background: linear-gradient(135deg, rgba(102,126,234,0.15) 0%, rgba(118,75,162,0.15) 100%);
+  padding: 32rpx;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  gap: 24rpx;
+  box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.tool-item:active {
+  transform: scale(0.98);
+}
+
+.tool-icon {
+  font-size: 48rpx;
+  line-height: 1;
+}
+
+.tool-info {
+  flex: 1;
+}
+
+.tool-title {
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.tool-desc {
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+}
