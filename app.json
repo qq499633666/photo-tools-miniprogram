@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/id-photo/id-photo",
+    "pages/watermark/watermark"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#667eea",
+    "navigationBarTitleText": "免费在线工具箱",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2"
+}
