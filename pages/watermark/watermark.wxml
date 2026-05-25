@@ -1,0 +1,56 @@
+<view class="container">
+  <view class="header">
+    <text class="title">🧹 图片去水印</text>
+    <text class="subtitle">智能移除图片中的水印和不需要的内容</text>
+  </view>
+
+  <!-- 图片选择区域 -->
+  <view class="upload-area" bindtap="chooseImage">
+    <wx:if test="{{!previewUrl}}">
+      <text class="upload-icon">+</text>
+      <text class="upload-text">点击上传图片</text>
+      <text class="upload-hint">支持 JPG、PNG 格式，最大 10MB</text>
+    </wx:if>
+    <wx:else>
+      <image class="preview-image" src="{{previewUrl}}" mode="aspectFit"></image>
+    </wx:else>
+  </view>
+
+  <!-- 处理按钮 -->
+  <view class="action-section" wx:if="{{previewUrl}}">
+    <view class="tool-desc">
+      <text>✨ 使用 AI 智能识别并去除水印</text>
+    </view>
+    
+    <view class="action-btn primary" bindtap="processImage">
+      <text>开始去水印</text>
+    </view>
+  </view>
+
+  <!-- 结果预览 -->
+  <view class="result-section" wx:if="{{resultPreview}}">
+    <view class="result-header">
+      <text class="result-title">✅ 处理完成</text>
+      <text class="compare-text">处理前 vs 处理后</text>
+    </view>
+    
+    <view class="image-compare">
+      <view class="compare-item">
+        <text class="label">原始图片</text>
+        <image src="{{previewUrl}}" mode="aspectFit"></image>
+      </view>
+      <view class="compare-item">
+        <text class="label">去水印后</text>
+        <image src="{{resultPreview}}" mode="aspectFit"></image>
+      </view>
+    </view>
+
+    <view class="action-btn save" bindtap="saveImage">
+      <text>保存到相册</text>
+    </view>
+    
+    <view class="action-btn reset" bindtap="reset">
+      <text>再处理一张</text>
+    </view>
+  </view>
+</view>
