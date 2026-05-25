@@ -1,0 +1,50 @@
+<view class="container">
+  <view class="header">
+    <text class="title">📷 证件照换底色</text>
+    <text class="subtitle">一键更换证件照背景色（红/蓝/白）</text>
+  </view>
+
+  <!-- 图片选择区域 -->
+  <view class="upload-area" bindtap="chooseImage">
+    <wx:if test="{{!previewUrl}}">
+      <text class="upload-icon">+</text>
+      <text class="upload-text">点击上传证件照</text>
+    </wx:if>
+    <wx:else>
+      <image class="preview-image" src="{{previewUrl}}" mode="aspectFit"></image>
+    </wx:else>
+  </view>
+
+  <!-- 颜色选择 -->
+  <view class="color-selector" wx:if="{{previewUrl}}">
+    <view class="option">
+      <text class="label">选择背景色：</text>
+    </view>
+    <view class="colors">
+      <view 
+        wx:for="['white', 'red', 'blue']" 
+        wx:key="index"
+        class="color-item {{color === bgColor ? 'selected' : ''}}"
+        data-color="{{color}}"
+        bindtap="setBgColor"
+      >
+        <view class="color-preview {{color}}"></view>
+        <text class="color-name">{{color === 'white' ? '白色' : (color === 'red' ? '红色' : '蓝色')}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 处理按钮 -->
+  <view class="action-btn process" bindtap="processImage" wx:if="{{previewUrl}}">
+    <text>处理图片</text>
+  </view>
+
+  <!-- 结果预览 -->
+  <view class="result-section" wx:if="{{resultPreview}}">
+    <view class="result-title">处理结果：</view>
+    <image class="result-image" src="{{resultPreview}}"></image>
+    <view class="action-btn save" bindtap="saveImage">
+      <text>保存到相册</text>
+    </view>
+  </view>
+</view>
